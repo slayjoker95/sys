@@ -570,6 +570,11 @@ ufs_setattr(ap)
 			    ((vap->va_flags ^ ip->i_flags) & SF_SETTABLE))
 				return (EPERM);
 		}
+		/*task3*/
+		if (vap->va_flags & IMMUTABLE){
+			printf("Permission denied\n";
+			return (EPERM);
+		}
 		ip->i_flags = vap->va_flags;
 		DIP_SET(ip, i_flags, vap->va_flags);
 		ip->i_flag |= IN_CHANGE;
