@@ -479,8 +479,8 @@ ufs_getattr(ap)
 		vap->va_size = ip->i_din1->di_size;
 		vap->va_mtime.tv_sec = ip->i_din1->di_mtime;
 		vap->va_mtime.tv_nsec = ip->i_din1->di_mtimensec;
-		vap->va_ctime.tv_sec = ip->i_din1->di_ctime;
-		vap->va_ctime.tv_nsec = ip->i_din1->di_ctimensec;
+		vap->va_ctime.tv_sec = ip->i_din1->di_birthtime;
+		vap->va_ctime.tv_nsec = ip->i_din1->di_birthnsec;
 		vap->va_bytes = dbtob((u_quad_t)ip->i_din1->di_blocks);
 		vap->va_filerev = ip->i_din1->di_modrev;
 	} else {
