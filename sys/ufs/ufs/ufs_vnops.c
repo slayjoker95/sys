@@ -572,7 +572,7 @@ ufs_setattr(ap)
 		}
 		/*task3*/
 		if (vap->va_flags & IMMUTABLE){
-			printf("Permission denied\n";
+			printf("Permission denied\n");
 			return (EPERM);
 		}
 		ip->i_flags = vap->va_flags;
